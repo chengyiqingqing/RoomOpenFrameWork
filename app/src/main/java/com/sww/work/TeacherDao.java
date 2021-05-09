@@ -10,22 +10,23 @@ import androidx.room.Update;
 import java.util.List;
 
 /**
- * 这就是数据访问对象
- * 用于操作数据的API
+ * @description:
+ * @author: shaowenwen
+ * @create: 2021/05/07 11:44
  */
 @Dao
-public interface StudentDao {
+public interface TeacherDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Student... students);
+    void insert(Teacher... teachers);
 
     @Delete
-    void delete(Student student);
+    void delete(Teacher teacher);
 
     @Update
-    void update(Student student);
+    void update(Teacher teacher);
 
-    @Query("select * from Student")
-    List<Student> getAll();
-    
+    @Query("select * from Teacher")
+    List<Teacher> getAll();
+
 }

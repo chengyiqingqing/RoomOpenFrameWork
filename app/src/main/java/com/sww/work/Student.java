@@ -15,15 +15,13 @@ public class Student {
     private int uid;
     @ColumnInfo(name = "name")
     private String name;
-    @ColumnInfo(name = "pwd")
-    private String password;
     @ColumnInfo(name = "addressId")
     private int addressId;
 
-    public Student(String name, String password, int id) {
+    public Student(int uid, String name, int addressId) {
+        this.uid = uid;
         this.name = name;
-        this.password = password;
-        this.uid = id;
+        this.addressId = addressId;
     }
 
     public int getUid() {
@@ -42,14 +40,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public int getAddressId() {
         return addressId;
     }
@@ -63,7 +53,6 @@ public class Student {
         return "Student{" +
                 "uid=" + uid +
                 ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
                 ", addressId=" + addressId +
                 '}';
     }
